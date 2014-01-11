@@ -9,7 +9,7 @@ class Animals
 		@@animals
 	end
 
-	def create (name, age, gender, species)
+	def add (name, age, gender, species)
 		new_animal = []
 		a_name = name
 		a_age = age
@@ -19,7 +19,7 @@ class Animals
 		# puts new_animal
 
 		@@animals[a_name] = new_animal
-		puts @@animals
+		# puts @@animals
 
 	end
 

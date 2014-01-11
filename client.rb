@@ -7,17 +7,17 @@ class Client
 		@n_pets
 	end
 
-	def create (name, n_children, age, n_pets)
+	def add (name, age, gender, children, pets)
 		new_client = []
 		c_name = name
-		n_children = n_children
+		n_children = children
+		c_gender = gender
 		c_age = age
-		c_species = species
+		n_pets = n_pets
 		created_client = new_client.push( c_age,c_gender , n_pets)
 		# puts new_animal
 
 		@@clients[c_name] = new_client
-		puts @@clients
 
 	end
 
