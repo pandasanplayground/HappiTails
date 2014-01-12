@@ -1,13 +1,12 @@
 class Animals 
-	# attr_accessor :name, :age, :gender, :species, :number_toys
-	attr_accessor :name, :age, :number_toys, :gender, :species
+	attr_accessor :name, :age, :num_toys, :gender, :species
 
-	def initialize (name, age, gender, species, number_toys)
+	def initialize (name, age, gender, species, num_toys)
 		@name = name
 		@age = age
 		@gender = gender
 		@species = species
-		@num_toys = number_toys
+		@num_toys = num_toys
 		
 	end
 

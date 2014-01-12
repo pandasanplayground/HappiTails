@@ -1,18 +1,19 @@
 require './shelter'
-require './animal'
 require './client'
+require './animal'
+
 
 my_shelter = Shelter.new("Moopy", "Third Street")
 
 def menu message
   puts `clear`
-  puts "*** Land Lord v1.0 ***\n\n"
+  puts "*** Moopy Shelter v1.0 ***\n\n"
 
   puts "#{message}\n\n" unless message.empty?
 
   puts '1 : Add an Animal'
-  # puts '2 : Add a Client'
-  # puts '3 : Display all clients'
+  puts '2 : Add a Client'
+  puts '3 : Display all clients'
   puts '4 : Display all animals'
   # puts '5 : facilitate client adopts an animal'
   # puts '6 : facilitate client puts an animal up for adoption'
@@ -44,26 +45,32 @@ while choice != 'q'
     my_shelter.animal << Animals.new(a_name, a_age, a_gender, a_species, a_num_toys)
     # my_shelter.animal << Animals.new(a_name, a_age, a_num_toys)
    
- #  when "2"
+  when "2"
   
- #    puts "What is the name of the client"
- #    c_name = gets.chomp
- #    puts "How old is your client"
- #    c_age = gets.chomp
- #    puts "What is the gender of your client?"
- #    c_gender = gets.chomp
- #    puts "How many children does your client have?"
- #    n_children = gets.chomp
- #    puts "How many pets does your client have?"
- #    n_pets = gets.chomp
-	# message = "Client \"#{c_name}"" has been added"
-	# new_client.add(c_name, c_age, c_gender, n_children, n_pets)
+    puts "What is the name of the client"
+    c_name = gets.chomp
+    puts "How old is your client"
+    c_age = gets.chomp
+    puts "What is the gender of your client?"
+    c_gender = gets.chomp
+    puts "How many children does your client have?"
+    n_children = gets.chomp
+    puts "How many pets does your client have?"
+    n_pets = gets.chomp
+    message = "Client #{c_name}"" has been added"
+    my_shelter.client << Client.new(c_name, c_age, c_gender, n_children, n_pets)
+    # my_shelter.client << Client.new
+  #   new_client.add(c_name, c_age, c_gender, n_children, n_pets)
 
   
- #  when "3"
- #    message = new_client.list_all_clients
+  when "3"
+    # list_clients = my_shelter.list_all_clients
+    message = "Here are the list of clients:\n\n"
+    message += my_shelter.list_all_clients
+      
   when "4"
-    message = my_shelter.list_all_animals
+    message = "Here are the list of animals:\n\n"
+    message += my_shelter.list_all_animals
 
 
 

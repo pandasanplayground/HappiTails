@@ -1,29 +1,45 @@
 class Client 
-	@@clients ={}
-
-	def initialize ()
+	# @@clients ={}
+	attr_accessor :name, :age, :gender, :children, :pets
+	def initialize (name, age, gender, children, pets)
+		@name = name
+		@children = children
+		@gender = gender
+		@age = age
+		@pets = pets
+	end
 	
-	end
+	# end
+	# attr_accessor :name
+	# def initialize (name)
+	# 	@name = name
+	# end
 
-	def add (name, age, gender, children, pets)
-		new_client = []
-		c_name = name
-		c_children = children
-		c_gender = gender
-		c_age = age
-		n_pets = pets
-		created_client = new_client.push(c_age, c_gender ,c_children, n_pets)
-		# puts new_animal
+	# def adopt
+	# end
 
-		@@clients[c_name] = created_client
+	# def set_adopt
+	# end
 
-	end
+	# def add (name, age, gender, children, pets)
+	# 	new_client = []
+	# 	c_name = name
+	# 	c_children = children
+	# 	c_gender = gender
+	# 	c_age = age
+	# 	n_pets = pets
+	# 	created_client = new_client.push(c_age, c_gender ,c_children, n_pets)
+	# 	# puts new_animal
 
-	def list_all_clients
-		@@clients.each do |key, value|
-			puts value
-		end
-	end
+	# 	@@clients[c_name] = created_client
+
+	# end
+
+	# def list_all_clients
+	# 	@@clients.each do |key, value|
+	# 		puts value
+	# 	end
+	# end
 
 
 end
