@@ -1,38 +1,44 @@
-class Animals
-	@@animals ={}
-	def initialize ()
-		@name
-		@age
-		@gender
-		@species 
-		@multiple_toys = []
-		@@animals
+class Animals 
+	# attr_accessor :name, :age, :gender, :species, :number_toys
+	attr_accessor :name, :age, :number_toys, :gender, :species
+
+	def initialize (name, age, gender, species, number_toys)
+		@name = name
+		@age = age
+		@gender = gender
+		@species = species
+		@num_toys = number_toys
+		
 	end
 
-	def add (name, age, gender, species)
-		new_animal = []
-		a_name = name
-		a_age = age
-		a_gender = gender
-		a_species = species
-		created_animal = new_animal.push( a_age,a_gender , a_species)
-		# puts new_animal
+	# def initialize (name, age, number_toys)
+	# 	@name = name
+	# 	@age = age
+	# 	# @gender = gender
+	# 	# @species = species
+	# 	@num_toys = number_toys
+	# 	# super
+	# end
 
-		@@animals[a_name] = new_animal
-		# puts @@animals
+	# def add (name, age, gender, species, number_toys)
+	# 	new_animal = []
+	# 	a_name = name
+	# 	a_age = age
+	# 	a_gender = gender
+	# 	a_species = species
+	# 	a_num_toys = number_toys
+	# 	created_animal = new_animal.push(a_age ,a_gender ,a_species, a_num_toys)
+	# 	# puts new_animal
 
-	end
+	# 	@@animals[a_name] = new_animal
+	# 	# puts @@animals
+	# end
+
+	# def list_all_animals
+	# 	@@animals.each do |key, value|
+	# 		puts key
+	# 	end
+	# end
+
 
 end
-
-# a1 = Animals.new
-
-# puts "What is the name of the animal"
-#     a_name = gets.chomp
-#     puts "How old is the animal?"
-#     a_age = gets.chomp
-#     puts "What is it's gender?"
-#     a_gender = gets.chomp
-#     puts "What about species?"
-#     a_species = gets.chomp
-# a1.create(a_name, a_age, a_gender, a_species)
