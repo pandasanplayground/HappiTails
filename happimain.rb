@@ -1,7 +1,6 @@
 require './shelter'
-require './client'
 require './animal'
-
+require './client'
 
 my_shelter = Shelter.new("Moopy", "Third Street")
 
@@ -15,7 +14,7 @@ def menu message
   puts '2 : Add a Client'
   puts '3 : Display all clients'
   puts '4 : Display all animals'
-  # puts '5 : facilitate client adopts an animal'
+  puts '5 : facilitate client adopts an animal'
   # puts '6 : facilitate client puts an animal up for adoption'
   puts "q : Quit\n\n"
   print '--> '
@@ -61,7 +60,6 @@ while choice != 'q'
     my_shelter.client << Client.new(c_name, c_age, c_gender, n_children, n_pets)
     # my_shelter.client << Client.new
   #   new_client.add(c_name, c_age, c_gender, n_children, n_pets)
-
   
   when "3"
     # list_clients = my_shelter.list_all_clients
@@ -72,12 +70,16 @@ while choice != 'q'
     message = "Here are the list of animals:\n\n"
     message += my_shelter.list_all_animals
 
-
-
   #   # Display a list of all tenants contact info
-  # when "5"
-  #   message += 'option 5'
-  #   # Show total sqft rented
+  when "5"
+    puts "Available animals for adoption"
+    my_shelter.get_a_animal.each do |animal|
+      message += animal.name + " "
+    end
+    # animal_name = gets.chomp
+    # message = "You have adopted #{animal_name}"
+    # message += my_shelter.adopt(animal_name)
+    # Show total sqft rented
   # when "6"
   #   message += 'option 6'
   #   # Show annual income of building

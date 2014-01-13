@@ -44,12 +44,19 @@ class Shelter
 	list_clients
 	end
 
-	def adopt
+	def adopt (animal_name)
+		if list_all_animals.include?(animal_name)
+		end
 	end
 
 	def set_adopt
 	end
 
+	def get_a_animal #getting an adoptable animal
+		@animal.select do |animal|
+			animal.adopted_pet?
+		end
+	end
 
 end
 
