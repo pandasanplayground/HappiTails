@@ -15,6 +15,12 @@ class Client
 		nPets = nPets + 1
 		@pets = nPets.to_s
 	end
+
+	def minPet
+		nPets = @pets.to_i
+		nPets = nPets - 1
+		@pets = nPets.to_s
+	end
 	# end
 	# attr_accessor :name
 	# def initialize (name)

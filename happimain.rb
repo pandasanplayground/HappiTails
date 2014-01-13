@@ -74,7 +74,9 @@ while choice != 'q'
   when "5"
     # available_animals = my_shelter.get_a_animal()
     puts "What is the name of the client?"
-    my_shelter.list_all_clients()
+    my_shelter.client.each do |client|
+      puts client.name
+    end
     name_client = gets.chomp
     my_shelter.client.each do |client|
         if client.name == name_client
@@ -101,14 +103,38 @@ while choice != 'q'
     # puts adopted_animal
     # adopted_animal.pet_adopted
     # message += "Animal #{name_animal} has been adopted"
-     message += "Animal #{name_animal} has been adopted"
+     message += "Animal #{name_animal} has been adopted by #{name_client}"
 
 
     # animal_name = gets.chomp
     # message = "You have adopted #{animal_name}"
     # message += my_shelter.adopt(animal_name)
     # Show total sqft rented
-  # when "6"
+  when "6"
+    puts "What is the name of the client?"
+    my_shelter.client.each do |client|
+      puts client.name
+    end
+    name_client = gets.chomp
+    my_shelter.client.each do |client|
+        if client.name == name_client
+          puts "Hello, #{client.name}!"
+          client.minPet
+        end
+    end
+    puts "What is the name of the animal"
+    a_name = gets.chomp
+    puts "How old is the animal?"
+    a_age = gets.chomp
+    puts "What is it's gender?"
+    a_gender = gets.chomp
+    puts "What about species?"
+    a_species = gets.chomp
+    puts "How many toys does the animal have?"
+    message = "Animal #{a_name} has been added"
+    a_num_toys = gets.chomp
+    my_shelter.animal << Animals.new(a_name, a_age, a_gender, a_species, a_num_toys)
+
   #   message += 'option 6'
   #   # Show annual income of building
   else
