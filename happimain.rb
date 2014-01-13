@@ -64,18 +64,46 @@ while choice != 'q'
   when "3"
     # list_clients = my_shelter.list_all_clients
     message = "Here are the list of clients:\n\n"
-    message += my_shelter.list_all_clients
+    message += my_shelter.list_all_clients()
       
   when "4"
     message = "Here are the list of animals:\n\n"
-    message += my_shelter.list_all_animals
+    message += my_shelter.list_all_animals()
 
   #   # Display a list of all tenants contact info
   when "5"
-    puts "Available animals for adoption"
-    my_shelter.get_a_animal.each do |animal|
-      message += animal.name + " "
+    # available_animals = my_shelter.get_a_animal()
+    puts "What is the name of the client?"
+    my_shelter.list_all_clients()
+    name_client = gets.chomp
+    my_shelter.client.each do |client|
+        if client.name == name_client
+          puts "Hello, #{client.name}!"
+          client.addPet
+        end
     end
+
+    puts "Available animals for adoption"
+    my_shelter.animal.each do |animal|
+          if animal.adopted == "no"
+            puts animal.name
+          end
+    end
+
+    puts "Which animal would you like to adopt?"
+    name_animal = gets.chomp
+    my_shelter.animal.each do |animal|
+      if animal.name == name_animal
+        animal.pet_adopted
+      end
+    end
+    # adopted_animal = (my_shelter.animal.select {|animal| animal.name == name_animal})
+    # puts adopted_animal
+    # adopted_animal.pet_adopted
+    # message += "Animal #{name_animal} has been adopted"
+     message += "Animal #{name_animal} has been adopted"
+
+
     # animal_name = gets.chomp
     # message = "You have adopted #{animal_name}"
     # message += my_shelter.adopt(animal_name)

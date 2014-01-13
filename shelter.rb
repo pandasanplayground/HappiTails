@@ -32,7 +32,7 @@ class Shelter
 
 	def list_all_animals
 		list_animals = @animal.inject("") do |all_animals, animal| 
-		all_animals << "Name: #{animal.name}\nage:#{animal.age}\ngender:#{animal.gender}\nspecies:#{animal.species}\nToys:#{animal.num_toys}\n\n"
+		all_animals << "Name: #{animal.name}\nage:#{animal.age}\ngender:#{animal.gender}\nspecies:#{animal.species}\nToys:#{animal.num_toys}\nAdopted:#{animal.adopted}\n\n"
 		end
 		list_animals
 	end
@@ -44,19 +44,14 @@ class Shelter
 	list_clients
 	end
 
-	def adopt (animal_name)
-		if list_all_animals.include?(animal_name)
-		end
-	end
+	# def get_a_animal #getting an adoptable animal
+	# 	@animal.select do |animal|
+	# 		animal.is_adopted
+	# 	end
+	# end
 
-	def set_adopt
+	def animal_adopted (animal_name)
 	end
-
-	def get_a_animal #getting an adoptable animal
-		@animal.select do |animal|
-			animal.adopted_pet?
-		end
-	end
-
 end
+
 

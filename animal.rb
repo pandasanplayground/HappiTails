@@ -11,8 +11,17 @@ class Animals
 		
 	end
 
+	def isAdopted
+		return adopted
+	end
+
 	def adopted_pet?
 		@adopted = "no"
+	end
+
+	def pet_adopted
+		@adopted = "yes"
+		puts "Pet " + @name + " has been adpoted"
 	end
 
 	# def initialize (name, age, number_toys)
